@@ -1,4 +1,4 @@
-package Lesson1;
+package Seminar1;
 
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class Exes2 {
         int count = 0;
         int a = 0, b = 0;
         a = scanner.nextInt();
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             b = scanner.nextInt();
             if (a > 0 && b < 0) count++;
             a = b;
