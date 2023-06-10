@@ -26,7 +26,7 @@ public class HW_Exes1_2 {
         int a = 0;
         if (n < 0) n=0;
         while ((a = scaner.nextInt()) !=0){
-            if (a < 0) sum+=n;
+            if (a < 0 && n > 0) sum+=n;
             n = a;
         }
         scaner.close();
