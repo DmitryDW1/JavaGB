@@ -1,0 +1,4 @@
+июн. 10, 2023 9:01:09 AM Example2.Ex005_Logger main
+WARNING: Тестовое логирование 1
+июн. 10, 2023 9:01:09 AM Example2.Ex005_Logger main
+INFO: Тестовое логирование 2

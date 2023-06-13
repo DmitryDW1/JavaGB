@@ -1,4 +1,4 @@
-package Example1;
+package Example2;
 
 import java.io.File;
 
@@ -12,3 +12,5 @@ public class fileSystemDemo {
         // C:/Users/Sk/Documents/xxx/brainexplosion/java/file.txt
     }
 }
+
+
