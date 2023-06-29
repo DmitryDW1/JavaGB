@@ -7,7 +7,18 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Notebook extends listNotebooks {
+
+
+    public Notebook(String color, String os, String model, Double displaySize, Integer sddSize, Integer ramSize, Double price, String manufacturer) {
+        super(color, os, model, displaySize, sddSize, ramSize, price, manufacturer);
+    }
+
     public static void main(String[] args) {
+        ArrayList notebooks = new ArrayList<>();
+        notebooks.add(new Notebook("Чёрный", "Windows10", "A100", 15.6, 512,
+                8, 30000.0, "Lenovo"));
+        notebooks.add(new Notebook("Белый", "Windows11", "A200", 17.0, 512, 8,
+                35020.0, "Lenovo"));
         Map filters = new HashMap<>();
         System.out.println("Параметры фильтрации: ");
         System.out.println("1 - Цвет");
@@ -71,16 +82,6 @@ public class Notebook extends listNotebooks {
                 filters.put(filterKey, manufacturerNotebook);
                 break;
         }
-        ArrayList notebooks = null;
-        ArrayList filteredNotebooks = NotebookFilter.filter(notebooks, filters);
-        if (filteredNotebooks.size() == 0){
-            System.out.println("Ничего не найдено");
-        } else {
-            for (Object notebook: filteredNotebooks){
-                System.out.println(getColor() + " " + getOs() + " " + getModel() + " " + getDisplaySize() + " "
-                        + getSddSize() + " " + getRamSize() + " " + getPrice() + " " + getManufacturer());
-            }
-        }
     }
     public class NotebookFilter {
         public static ArrayList filter(ArrayList notebooks, Map filters){
@@ -92,6 +93,8 @@ public class Notebook extends listNotebooks {
                     if (!filterKey.equals(color)) {
                         allFiltersMatch = false;
                         break;
+                    }else {
+                        filteredNotebooks.add(notebook.equals(color));
                     }
                     if (!filterKey.equals(os)) {
                         allFiltersMatch = false;
@@ -108,6 +111,8 @@ public class Notebook extends listNotebooks {
                     if (!filterKey.equals(sddSize)) {
                         allFiltersMatch = false;
                         break;
+                    }else {
+                        filteredNotebooks.add(notebook.equals(sddSize.toString()));
                     }
                     if (!filterKey.equals(ramSize)) {
                         allFiltersMatch = false;
@@ -127,22 +132,8 @@ public class Notebook extends listNotebooks {
         }
     }
 
-    public Notebook(String color, String os, String model, Double displaySize,
-                    Integer sddSize, Integer ramSize, Double price, String manufacturer) {
-        this.color = color;
-        this.os = os;
-        this.model = model;
-        this.displaySize = displaySize;
-        this.sddSize = sddSize;
-        this.ramSize = ramSize;
-        this.price = price;
-        this.manufacturer = manufacturer;
-        ArrayList notebooks = new ArrayList<>();
-        notebooks.add(new Notebook("Чёрный", "Windows10", "A100", 15.6, 512,
-                8, 30000.0, "Lenovo"));
-        notebooks.add(new Notebook("Белый", "Windows11", "A200", 17.0, 512, 8,
-                35020.0, "Lenovo"));
+
+
     }
-}
 
 

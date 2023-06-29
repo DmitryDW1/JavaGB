@@ -9,52 +9,92 @@ public class listNotebooks {
     static Integer ramSize;
     static Double price;
     static String manufacturer;
-    public static String getColor(){
-        return color;
-    }
-    public void setColor(String color){
+    public listNotebooks(String color, String os, String model, Double displaySize,
+                    Integer sddSize, Integer ramSize, Double price, String manufacturer) {
         this.color = color;
-    }
-    public static String getOs(){
-        return os;
-    }
-    public void setOs(String os){
         this.os = os;
-    }
-    public static String getModel(){
-        return model;
-    }
-    public void setModel(String model){
         this.model = model;
-    }
-    public static Double getDisplaySize(){
-        return displaySize;
-    }
-    public void setDisplaySize(Double displaySize){
         this.displaySize = displaySize;
-    }
-    public static Integer getSddSize(){
-        return sddSize;
-    }
-    public void setSddSize(Integer sddSize){
         this.sddSize = sddSize;
-    }
-    public static Integer getRamSize(){
-        return ramSize;
-    }
-    public void setRamSize(Integer ramSize){
         this.ramSize = ramSize;
-    }
-    public static Double getPrice(){
-        return price;
-    }
-    public void setPrice(Double price){
         this.price = price;
-    }
-    public static String getManufacturer(){
-        return manufacturer;
-    }
-    public void setManufacturer(String manufacturer){
         this.manufacturer = manufacturer;
-}
+    }
+    public static StringBuilder getColor(listNotebooks[] vitrina, String color){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items: vitrina) {
+            if(color == items.color){
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getOs(listNotebooks[] vitrina, String os){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items: vitrina) {
+            if(os == items.os){
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getModel(listNotebooks[] vitrina, String model) {
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (model == items.model) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getDisplaySize(listNotebooks[] vitrina, Double displaySize){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (displaySize == items.displaySize) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getSddSize(listNotebooks[] vitrina, Integer sddSize){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (sddSize == items.sddSize) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getRamSize(listNotebooks[] vitrina, Integer ramSize) {
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (ramSize == items.ramSize) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getPrice(listNotebooks[] vitrina, Double price){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (price == items.price) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    public static StringBuilder getManufacturer(listNotebooks[] vitrina, String manufacturer){
+        StringBuilder res = new StringBuilder();
+        for (listNotebooks items : vitrina) {
+            if (manufacturer == items.manufacturer) {
+                userNotebook(res, items);
+            }
+        }
+        return res;
+    }
+    private static void userNotebook(StringBuilder res, listNotebooks items) {
+        res.append(items.color + items.os + items.model + items.displaySize + items.sddSize + items.ramSize
+        + items.price + items.manufacturer + "\n");
+    }
+
 }
