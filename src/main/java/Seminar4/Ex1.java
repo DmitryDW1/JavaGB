@@ -84,7 +84,7 @@ public class Ex1 {
         LinkedList<Integer> linkedList = new LinkedList<>();
         Random random = new Random();
         for (int i = 0; i < n; i++) {
-            linkedList.add(random.nextInt(-10,10));
+            linkedList.add(random.nextInt(10));
         }
         return linkedList;
     }
