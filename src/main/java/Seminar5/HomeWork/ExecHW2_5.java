@@ -35,19 +35,19 @@ public class ExecHW2_5 {
      */
     public static Map<String, Integer> showEntryList(List<String> personals) {
 
-        Map<String, Integer> map = new HashMap();
+        Map<String, Integer> mapS = new HashMap();
         for (String personal : personals) {
             String personalName = personal.split(" ")[0];
-            map.put(personalName, map.getOrDefault(personalName, 0) + 1);
+            mapS.put(personalName, mapS.getOrDefault(personalName, 0) + 1);
         }
-        Map<String, Integer> sortedMap = sortedMap(map);
+        Map<String, Integer> sortedMap = sortedMap(mapS);
         for (Map.Entry entry: sortedMap.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue() + " повторения(-ий, -е)");
         }
-        return map;
+        return mapS;
     }
-    private static Map<String, Integer> sortedMap(Map<String, Integer> map) {
-        Map<String, Integer> sortedMap = map.entrySet().stream()
+    private static Map<String, Integer> sortedMap(Map<String, Integer> mapS) {
+        Map<String, Integer> sortedMap = mapS.entrySet().stream()
                 .sorted(Comparator.comparingInt(e -> -e.getValue()))
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,

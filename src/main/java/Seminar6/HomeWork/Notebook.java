@@ -1,18 +1,16 @@
 package Seminar6.HomeWork;
 
 public class Notebook {
-    Integer number;
-    String color;
-    String os;
-    String model;
-    Double displaySize;
-    Integer sddSize;
-    Integer ramSize;
-    Double price;
-    String manufacturer;
-    public Notebook(Integer number, String color, String os, String model, Double displaySize,
+   String color;
+   String os;
+   String model;
+   Double displaySize;
+   Integer sddSize;
+   Integer ramSize;
+   Double price;
+   String manufacturer;
+    public Notebook(String color, String os, String model, Double displaySize,
                     Integer sddSize, Integer ramSize, Double price, String manufacturer) {
-        this.number = number;
         this.color = color;
         this.os = os;
         this.model = model;
@@ -22,9 +20,34 @@ public class Notebook {
         this.price = price;
         this.manufacturer = manufacturer;
     }
+    public String getColor() {
+        return color;
+    }
+    public String getOs() {
+        return os;
+    }
+    public String getModel() {
+        return model;
+    }
+    public Double getDisplaySize() {
+        return displaySize;
+    }
+    public Integer getSddSize() {
+        return sddSize;
+    }
+    public Integer getRamSize() {
+        return ramSize;
+    }
+    public Double getPrice() {
+        return price;
+    }
+    public String getManufacturer() {
+        return manufacturer;
+    }
+    @Override
     public String toString(){
-        return String.format("id: %d, Цвет: %s, ОС: %s, Модель: %s, Размер дисплея: %s," +
-                "Объём SDD: %d, Объём памяти: %d, Цена: %s, Производитель: %s", number, color, os, model, displaySize,
+        return String.format("Цвет: %s, ОС: %s, Модель: %s, Размер дисплея: %s," +
+                "Объём SDD: %d, Объём памяти: %d, Цена: %s, Изготовитель: %s", color, os, model, displaySize,
                 sddSize, ramSize, price, manufacturer);
     }
 }
