@@ -58,11 +58,11 @@ public class Robot implements Actions{
 
     @Override
     public boolean run(double distance) {
-        if (runDistance <= distance){
+        if (runDistance >= distance){
+            System.out.println("Робот " + name + " пробежал по беговой дорожке");
+        }else {
             System.out.println("Робот " + name + " недобежал");
             flag = true;
-        }else {
-            System.out.println("Робот " + name + " пробежал по беговой дорожке");
         }
         return flag;
     }
