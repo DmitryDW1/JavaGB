@@ -59,9 +59,9 @@ public class Cat implements Actions{
     @Override
     public boolean run(double distance) {
         if (runDistance >= distance){
-            System.out.println(getName() + " пробежал по беговой дорожке");
+            System.out.println("Кот " + name + " пробежал по беговой дорожке");
         }else {
-            System.out.println(getName() + " недобежал");
+            System.out.println("Кот " + name + " недобежал");
             flag = true;
         }
         return flag;
