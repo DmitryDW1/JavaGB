@@ -47,18 +47,18 @@ public class Robot implements Actions{
 
     @Override
     public boolean jump(double height) {
-        if (jumpHeight < height){
+        if (jumpHeight >= height){
+            System.out.println("Робот " + name + " перепрыгнул стену");
+        }else {
             System.out.println("Робот " + name + " не смог перепрыгнуть стену");
             flag = true;
-        }else {
-            System.out.println("Робот " + name + " перепрыгнул стену");
         }
         return flag;
     }
 
     @Override
     public boolean run(double distance) {
-        if (runDistance < distance){
+        if (runDistance <= distance){
             System.out.println("Робот " + name + " недобежал");
             flag = true;
         }else {

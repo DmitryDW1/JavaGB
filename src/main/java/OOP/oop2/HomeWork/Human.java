@@ -47,22 +47,22 @@ public class Human implements Actions{
     }
     @Override
     public boolean jump(double height) {
-        if (jumpHeight < height){
+        if (jumpHeight >= height){
+            System.out.println("Человек " + name + " перепрыгнул стену");
+        }else {
             System.out.println("Человек " + name + " не смог перепрыгнуть стену");
             flag = true;
-        }else {
-            System.out.println("Человек " + name + " перепрыгнул стену");
         }
         return flag;
     }
 
     @Override
     public boolean run(double distance) {
-        if (runDistance < distance){
+        if (runDistance >= distance){
+            System.out.println("Человек " + name + " пробежал по беговой дорожке");
+        }else {
             System.out.println("Человек " + name + " недобежал");
             flag = true;
-        }else {
-            System.out.println("Человек " + name + " пробежал по беговой дорожке");
         }
         return flag;
     }

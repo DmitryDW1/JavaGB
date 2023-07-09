@@ -16,12 +16,12 @@ public class Main {
         }
         System.out.println("-----------");
         ArrayList<Obstacles> obstacles = new ArrayList<>();
-        Wall wall1 = new Wall(1);
+        Wall wall1 = new Wall(0.1);
         Wall wall2 = new Wall(1.2);
         Wall wall3 = new Wall(1.3);
         Treadmill treadmill1 = new Treadmill(10);
         Treadmill treadmill2 = new Treadmill(100);
-        Treadmill treadmill3 = new Treadmill(1000);
+        Treadmill treadmill3 = new Treadmill(300);
         obstacles.add(wall1);
         obstacles.add(wall2);
         obstacles.add(wall3);

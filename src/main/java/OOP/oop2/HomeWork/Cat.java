@@ -47,7 +47,7 @@ public class Cat implements Actions{
 
     @Override
     public boolean jump(double height) {
-        if (jumpHeight < height){
+        if (jumpHeight <= height){
             System.out.println("Кот " + name + " не смог перепрыгнуть стену");
             flag = true;
         }else {
@@ -58,7 +58,7 @@ public class Cat implements Actions{
 
     @Override
     public boolean run(double distance) {
-        if (runDistance < distance){
+        if (runDistance <= distance){
             System.out.println(getName() + " недобежал");
             flag = true;
         }else {
