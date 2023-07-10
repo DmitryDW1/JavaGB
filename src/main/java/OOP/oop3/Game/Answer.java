@@ -4,7 +4,7 @@ public class Answer {
 
     private int bulls;
     private int cows;
-    public Answer(int bulls, int cows) {
+    public Answer(int bulls, int cows, String input) {
         this.bulls = bulls;
         this.cows = cows;
     }

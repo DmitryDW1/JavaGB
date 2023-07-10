@@ -10,6 +10,8 @@ public abstract class AbstractGame implements Game{
 
 
     public GameStatus status = GameStatus.INIT;
+    private String input;
+
     public AbstractGame(){
     }
     public AbstractGame(int wordLength, int tryCount, String word, GameStatus status) {
@@ -17,6 +19,10 @@ public abstract class AbstractGame implements Game{
         this.tryCount = tryCount;
         this.word = word;
         this.status = status;
+    }
+
+    public String getWord() {
+        return word;
     }
 
     @Override
@@ -58,11 +64,17 @@ public abstract class AbstractGame implements Game{
         if (bulls == wordLength){
             status = GameStatus.WIN;
         }
-        return new Answer(bulls, cows);
+        return new Answer(bulls, cows, getInput(input));
     }
+    @Override
+    public String getInput(String input) {
+            return input;
+        }
 
     @Override
     public GameStatus getGameStatus() {
         return status;
     }
+
+    public abstract String getInput();
 }

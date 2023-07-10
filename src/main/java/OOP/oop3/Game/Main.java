@@ -47,36 +47,42 @@ public class Main {
         }
         if (isWin) {
             String info = "Вы победили!";
-            System.out.println(info);
-            log.add(info);
-            log.add("-------");
-            restart(log);
+            System.out.println("/////////");
+            addLogInfo(log, game, info);
         } else {
             String info = "Вы проиграли!";
-            System.out.println(info);
-            log.add(info);
-            log.add("-------");
-            restart(log);
+            System.out.println("/////////");
+            addLogInfo(log, game, info);
         }
         return game;
     }
+
+    private static void addLogInfo(ArrayList log, AbstractGame game, String info) {
+        System.out.println(info);
+        log.add(info);
+        log.add("Правильный ответ: " + game.getWord());
+        log.add("-------");
+        restart(log);
+    }
+
     private static void restart(ArrayList log) {
         System.out.println("Сыграть ещё раз? (y/n)");
         System.out.println("Посмотреть журнал (l)");
         Scanner scannerNewGame = new Scanner(System.in);
         String newGame = scannerNewGame.nextLine();
         switch (newGame){
+            default:
+                System.out.println("Непонимаю... отключаюсь");
+                break;
             case "y": getAbstractGame(log);
             case "n":
                 System.out.println("До новых встреч!!!");
+                break;
             case "l":
                 for (Object o : log) {
                     System.out.println(o);
                 }
-                break;
-            default:
-                System.out.println("Непонимаю... отключаюсь");
-                break;
+                restart(log);
         }
     }
 }
