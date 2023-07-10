@@ -17,9 +17,4 @@ public class EnglishGame extends AbstractGame{
     public String getInput(String input) {
         return input;
     }
-
-    @Override
-    public String getInput() {
-        return null;
-    }
 }

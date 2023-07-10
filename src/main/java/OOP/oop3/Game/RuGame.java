@@ -15,11 +15,6 @@ public class RuGame extends AbstractGame{
 
     @Override
     public String getInput(String input) {
-        return input;
-    }
-
-    @Override
-    public String getInput() {
         return null;
     }
 }

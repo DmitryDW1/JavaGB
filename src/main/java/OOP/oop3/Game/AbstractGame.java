@@ -66,15 +66,9 @@ public abstract class AbstractGame implements Game{
         }
         return new Answer(bulls, cows, getInput(input));
     }
-    @Override
-    public String getInput(String input) {
-            return input;
-        }
 
     @Override
     public GameStatus getGameStatus() {
         return status;
     }
-
-    public abstract String getInput();
 }
