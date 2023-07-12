@@ -26,6 +26,21 @@
             <artifactId>plexus-utils</artifactId>
             <version>1.5.6</version>
         </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.mjhaugsdal</groupId>
+            <artifactId>er-m254-2013-10-08</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.mjhaugsdal</groupId>
+            <artifactId>er-m254-2013-10-08</artifactId>
+            <version>4.0.0</version>
+        </dependency>
 
     </dependencies>
     <build>
