@@ -28,9 +28,19 @@ public class Calculator {
     }
     public List translation(List<?> numbers){
         List binaryString = new ArrayList<>();
-        
         for (Object number : numbers) {
-            binaryString.add(Integer.toBinaryString((Integer) number));
+            if (number instanceof Integer){
+                binaryString.add(Integer.toBinaryString((Integer) number));
+            }
+            if(number instanceof Double){
+                binaryString.add(Long.toBinaryString(Double.doubleToLongBits((Double) number)));
+            }
+            if(number instanceof Float){
+                binaryString.add(Long.toBinaryString(Float.floatToIntBits((Float) number)));
+            }
+            if(number instanceof String){
+                binaryString.add(Integer.toBinaryString();
+            }
         }
         return binaryString;
     }
