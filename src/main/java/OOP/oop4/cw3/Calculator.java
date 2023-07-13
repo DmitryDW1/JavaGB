@@ -39,9 +39,21 @@ public class Calculator {
                 binaryString.add(Long.toBinaryString(Float.floatToIntBits((Float) number)));
             }
             if(number instanceof String){
-                binaryString.add(Integer.toBinaryString();
+                binaryString.add(stringToBinary(((String) number)));
             }
         }
         return binaryString;
+
+    }
+    public StringBuilder stringToBinary(String number) {
+        StringBuilder answer = new StringBuilder();
+        for (int i = 0; i < number.length(); i++) {
+            char charNumber = number.charAt(i);
+            answer.append(Integer.toBinaryString(charNumber)).append(' ');
+        }
+        return answer;
+    }
+    private String toString(Object number) {
+        return (String) number;
     }
 }

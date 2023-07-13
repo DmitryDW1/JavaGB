@@ -13,12 +13,12 @@ public class Main {
         List<Number> numberList = new ArrayList<>();
         List<Float> floatList = new ArrayList<>();
         List<String> stringList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i < 5; i++) {
             doubleList.add((double) i + 0.4);
             integerList.add(i);
             numberList.add(i);
             floatList.add ((float) (i + 0.4));
-            stringList.add(i, "i");
+            stringList.add(i - 1, "text");
         }
         System.out.println("doubleList = " + doubleList);
         System.out.println("integerList = " + integerList);
@@ -33,5 +33,6 @@ public class Main {
         System.out.println("calculator.translation(integerList) = " + calculator.translation(integerList));
         System.out.println("calculator.translation(doubleList) = " + calculator.translation(doubleList));
         System.out.println("calculator.translation(floatList) = " + calculator.translation(floatList));
+        System.out.println("calculator.translation(stringList) = " + calculator.translation(stringList));
     }
 }
