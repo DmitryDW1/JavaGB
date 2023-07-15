@@ -16,5 +16,6 @@ public class StudentView {
         }
         Controller controller = new Controller();
         controller.send(students);
+        controller.show();
     }
 }

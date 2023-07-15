@@ -1,18 +1,19 @@
 package OOP.oop5.program.service;
 
 import OOP.oop5.program.data.Student;
-import OOP.oop5.program.data.User;
 
 import java.util.List;
 
 public class UserService implements DataService{
+    List<Student>studentList;
     @Override
-    public User create(List<Student> students) {
-        return null;
+    public void create(List<Student> students) {
+        this.studentList = studentList;
     }
 
     @Override
-    public List<User> read() {
-        return null;
+    public List<Student> read() {
+
+        return studentList;
     }
 }

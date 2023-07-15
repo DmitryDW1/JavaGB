@@ -10,4 +10,8 @@ public class Controller {
         UserService userService = new UserService();
         userService.create(students);
     }
+    public List<Student>show(){
+        UserService userService = new UserService();
+        return userService.read();
+    }
 }
