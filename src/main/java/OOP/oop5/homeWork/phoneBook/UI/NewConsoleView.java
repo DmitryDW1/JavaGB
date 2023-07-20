@@ -1,7 +1,6 @@
 package OOP.oop5.homeWork.phoneBook.UI;
 
 import OOP.oop5.homeWork.phoneBook.Core.MVP.View;
-import OOP.oop5.homeWork.phoneBook.Core.Infrastructure.Phonebook;
 
 import java.util.Scanner;
 
@@ -10,6 +9,7 @@ Scanner in;
 public NewConsoleView() {
     in = new Scanner(System.in);
 }
+
 
     @Override
     public Integer getIndex(Integer value) {
@@ -45,37 +45,22 @@ public void setLastName(String value) {
 
 @Override
 public String getDescription() {
-    System.out.print("Описание: ");
+    System.out.print("ID: ");
     return in.nextLine();
 }
 
 @Override
 public void setDescription(String value) {
-    System.out.printf("Описание: %s\n", value);
+    System.out.printf("ID: %s\n", value);
+}
+@Override
+public String getPhone(){
+    System.out.println("Телефон: ");
+    return in.nextLine();
 }
 
 @Override
-public void displayError(String message) {
-    System.out.println("Ошибка: " + message);
-}
-
-@Override
-public void showContactNotFoundMessage(String message) {
-    System.out.println("Контакт не найден: " + message);
-}
-
-@Override
-public void setContactList(Phonebook phonebook) {
-    // Реализуйте метод здесь
-}
-
-@Override
-public void displayMessage(String message) {
-    System.out.println(message);
-}
-
-@Override
-public void clearForm() {
-    // Реализуйте метод здесь
+public void setPhone(String value) {
+    System.out.printf("Телефон: %s\n", value);
 }
 }

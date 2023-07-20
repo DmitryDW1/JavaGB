@@ -15,36 +15,10 @@ public class Presenter {
         model = new Model(pathDb);
     }
 
-
-
     public void add() {
         model.currentBook().add(
-                new Contact(view.getDescription(), view.getFirstName(), view.getLastName()));
+                new Contact(view.getFirstName(), view.getLastName(), view.getPhone(), view.getDescription()));
     }
-
-    public void remove(String query) {
-        Contact contact = new Contact(view.getFirstName());
-        query = String.valueOf(contact);
-        model.currentBook().remove(contact.equals(query));
-        saveToFile();
-//        if (model.currentBook().count() < 1) {
-//            model.setCurrentIndex(-1);
-//
-//            view.setFirstName("");
-//            view.setLastName("");
-//            view.setDescription("");
-//        } else {
-//            model.setCurrentIndex(model.getCurrentIndex() - 1);
-//            if (model.getCurrentIndex() < 0)
-//                model.setCurrentIndex(0);
-//
-//            Contact temp = model.currentContact();
-//            view.setFirstName(temp.firstName);
-//            view.setLastName(temp.lastName);
-//            view.setDescription(temp.description);
-//        }
-    }
-
     public void saveToFile() {
         model.save();
     }
@@ -54,9 +28,10 @@ public class Presenter {
             if (model.getCurrentIndex() + 1 < model.currentBook().count()) {
                 model.setCurrentIndex(model.getCurrentIndex() + 1);
                 Contact contact = model.currentContact();
-                view.setDescription(contact.description);
                 view.setFirstName(contact.firstName);
                 view.setLastName(contact.lastName);
+                view.setPhone(contact.phone);
+                view.setDescription(contact.description);
             }
         }
     }
@@ -66,36 +41,26 @@ public class Presenter {
             if (model.getCurrentIndex() - 1 > -1) {
                 model.setCurrentIndex(model.getCurrentIndex() - 1);
                 Contact contact = model.currentContact();
-                view.setDescription(contact.description);
                 view.setFirstName(contact.firstName);
                 view.setLastName(contact.lastName);
+                view.setPhone(contact.phone);
+                view.setDescription(contact.description);
             }
         }
     }
 
     public void importFromCSV(String path) throws IOException{
         model.currentBook().importFromCSV(path);
-        saveToFile();
     }
 
     public void exportToCSV(String path) throws IOException {
         model.currentBook().exportToCSV(path);
     }
-
     public List<Contact> search(String query) {
         return model.currentBook().search(query);
     }
 
     public void LoadFromFile() {
         model.load();
-
-        if (model.currentBook().count() > 0) {
-            model.setCurrentIndex(0);
-            var contact = model.currentContact();
-
-            view.setDescription(contact.description);
-            view.setFirstName(contact.firstName);
-            view.setLastName(contact.lastName);
-        }
     }
 }

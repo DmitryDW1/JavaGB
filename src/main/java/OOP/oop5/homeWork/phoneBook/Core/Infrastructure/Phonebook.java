@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Phonebook {  
+public class Phonebook {
 
     private List<Contact> contacts;
 
@@ -24,29 +24,8 @@ public class Phonebook {
         return flag;
     }
 
-    public Contact getContact(int index) {
-        return contains(index) ? contacts.get(index) : null;
-    }
-
-    public boolean update(Contact contact) {
-        boolean flag = false;
-        int index = contacts.indexOf(contact);
-        if (index != -1) {
-            contacts.set(index, contact);
-            flag = true;
-        }
-        return flag;
-    }
-
-    public List<Contact> remove(boolean contact) {
-        for (int i = 0; i < contacts.size(); i++){
-            contacts.remove(contact);
-        }
-        return contacts;
-    }
-
     public List<Contact> search(String query) {
-        List<Contact> result = new ArrayList<>();
+        List<Contact> result = new ArrayList<Contact>();
         for (Contact contact : contacts) {
             if (contact.firstName.contains(query)) {
                 result.add(contact);
@@ -61,7 +40,7 @@ public class Phonebook {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-                contacts.add(new Contact(data[2], data[1], data[0]));
+                contacts.add(new Contact(data[0], data[1], data[2], data[3]));
             }
             reader.close();
         } catch (FileNotFoundException e) {
@@ -75,7 +54,7 @@ public class Phonebook {
     public void exportToCSV(String filename) {
         try (FileWriter writer = new FileWriter(filename)) {
             for (Contact contact : contacts) {
-                writer.write(contact.getDescription() + "," + contact.getFirstName() + "," + contact.getLastName() + "\n");
+                writer.write( contact.getFirstName() + "," + contact.getLastName() + "," + contact.getPhone() + "," + contact.getDescription() + "\n");
             }
             writer.flush();
         } catch (IOException e) {
@@ -87,15 +66,11 @@ public class Phonebook {
         return contacts != null && contacts.size() > index;
     }
 
-    public List<Contact> getContacts() {
-        return contacts;
-    }
-
     public int count() {
         return contacts.size();
     }
 
-    public Contact getCotact(int index) {
+    public Contact getContact(int index) {
         return contains(index) ? contacts.get(index) : null;
     }
 }

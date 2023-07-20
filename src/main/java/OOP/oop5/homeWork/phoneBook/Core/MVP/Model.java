@@ -22,7 +22,7 @@ public class Model {
 
     public Contact currentContact() {
         if (currentIndex >= 0) {
-            return currentBook.getCotact(currentIndex);
+            return currentBook.getContact(currentIndex);
         } else {
             return null;
         }
@@ -33,8 +33,9 @@ public class Model {
             String fname = reader.readLine();
             while (fname != null) {
                 String lname = reader.readLine();
+                String phone = reader.readLine();
                 String description = reader.readLine();
-                currentBook.add(new Contact(description, fname, lname));
+                currentBook.add(new Contact(fname, lname, phone, description));
                 fname = reader.readLine();
             }
         } catch (IOException e) {
@@ -45,10 +46,11 @@ public class Model {
     public void save() {
         try (FileWriter writer = new FileWriter(path, false)) {
             for (int i = 0; i < currentBook.count(); i++) {
-                Contact contact = currentBook.getCotact(i);
-                writer.write(String.format("%s\n", contact.firstName));
-                writer.write(String.format("%s\n", contact.lastName));
-                writer.write(String.format("%s\n", contact.description));
+                Contact contact = currentBook.getContact(i);
+                writer.append(String.format("%s\n", contact.firstName));
+                writer.append(String.format("%s\n", contact.lastName));
+                writer.append(String.format("%s\n", contact.phone));
+                writer.append(String.format("%s\n", contact.description));
             }
             writer.flush();
         } catch (IOException e) {

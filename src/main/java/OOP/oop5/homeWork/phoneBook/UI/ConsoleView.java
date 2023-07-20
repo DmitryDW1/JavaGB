@@ -1,6 +1,5 @@
 package OOP.oop5.homeWork.phoneBook.UI;
 
-import OOP.oop5.homeWork.phoneBook.Core.Infrastructure.Phonebook;
 import OOP.oop5.homeWork.phoneBook.Core.MVP.View;
 
 import java.util.Scanner;
@@ -45,38 +44,22 @@ public class ConsoleView implements View {
 
     @Override
     public String getDescription() {
-        System.out.printf("Description: ");
+        System.out.printf("ID: ");
         return in.nextLine();
     }
 
     @Override
     public void setDescription(String value) {
-        System.out.printf("Description: %s\n", value);        
+        System.out.printf("ID: %s\n", value);
     }
 
     @Override
-    public void displayError(String message) {
-
+    public String getPhone() {
+        return null;
     }
 
     @Override
-    public void showContactNotFoundMessage(String message) {
+    public void setPhone(String phone) {
 
     }
-
-    @Override
-    public void setContactList(Phonebook phonebook) {
-
-    }
-
-    @Override
-    public void displayMessage(String message) {
-
-    }
-
-    @Override
-    public void clearForm() {
-
-    }
-
 }
