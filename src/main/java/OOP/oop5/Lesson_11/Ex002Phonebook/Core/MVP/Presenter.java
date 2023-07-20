@@ -1,6 +1,9 @@
 package OOP.oop5.Lesson_11.Ex002Phonebook.Core.MVP;
-import Ex002Phonebook.Core.Models.Contact;
-public class Presenter {
+
+import OOP.oop5.Lesson_11.Ex002Phonebook.Core.Models.Contact;
+import OOP.oop5.Lesson_11.Ex002Phonebook.UI.NewConsoleView;
+
+public class Presenter extends NewConsoleView {
     
     private Model model;
     private View view;
@@ -25,10 +28,11 @@ public class Presenter {
 
     public void add() {
         model.currentBook().add(
-                new Contact(view.getFirstName(), view.getLastName(), view.getDescription()));
+                new Contact(view.getFirstName(), view.getLastName(), view.getDescription().toString()));
+        saveToFile();
     }
 
-    public void remove() {
+    public void removeContact() {
         Contact contact = new Contact(view.getFirstName(), view.getLastName(), view.getDescription());
         model.currentBook().remove(contact);
 
@@ -48,6 +52,7 @@ public class Presenter {
             view.setLastName(temp.lastName);
             view.setDescription(temp.description);
         }
+        saveToFile();
     }
 
     public void saveToFile() {

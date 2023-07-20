@@ -1,6 +1,6 @@
 package OOP.oop5.Lesson_11.Ex003Math.Mathematics.CalculateArea;
 
-import Ex003Math.Mathematics.Shapes.Shape;
+import OOP.oop5.Lesson_11.Ex003Math.Mathematics.Shapes.Shape;
 
 public class CalculateArea implements Calculate {
 

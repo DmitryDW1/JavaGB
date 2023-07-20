@@ -1,13 +1,9 @@
 package OOP.oop5.Lesson_11.Ex002Phonebook.Core.MVP;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import OOP.oop5.Lesson_11.Ex002Phonebook.Core.Infrastructure.Phonebook;
+import OOP.oop5.Lesson_11.Ex002Phonebook.Core.Models.Contact;
 
-import Ex002Phonebook.Core.Infrastructure.Phonebook;
-import Ex002Phonebook.Core.Models.Contact;
+import java.io.*;
 
 public class Model {
 
@@ -23,7 +19,7 @@ public class Model {
 
     public Contact currentContact() {
         if (currentIndex >= 0) {
-            return currentBook.getCotact(currentIndex);
+            return currentBook.getContact(currentIndex);
         } else {
             // ???...
             return null;
@@ -51,15 +47,14 @@ public class Model {
 
     public void save() {
 
-        try (FileWriter writer = new FileWriter(path, false)) {
+        try (FileWriter writer = new FileWriter(path)) {
             for (int i = 0; i < currentBook.count(); i++) {
-                Contact contact = currentBook.getCotact(i);
+                Contact contact = currentBook.getContact(i);
                 writer.append(String.format("%s\n", contact.firstName));
                 writer.append(String.format("%s\n", contact.lastName));
                 writer.append(String.format("%s\n", contact.description));
             }
             writer.flush();
-            writer.close();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

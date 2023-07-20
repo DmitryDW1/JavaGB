@@ -1,14 +1,15 @@
 package OOP.oop5.Lesson_11.Ex002Phonebook.Core.Infrastructure;
 
+import OOP.oop5.Lesson_11.Ex002Phonebook.Core.Models.Contact;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import Ex002Phonebook.Core.Models.Contact;
 
 public class Phonebook {
 
     private List<Contact> contacts;
-    
+    private int contact;
+
     public Phonebook() {
         contacts = new ArrayList<Contact>();
     }
@@ -24,7 +25,7 @@ public class Phonebook {
     }
 
     // read
-    public Contact getCotact(int index) {
+    public Contact getContact(int index) {
         return contains(index) ? contacts.get(index) : null;
     }
 
@@ -34,8 +35,8 @@ public class Phonebook {
     // delete
     public boolean remove(Contact contact) {
         boolean flag = false;
-        if (contacts.indexOf(contact) != -1) {
-            contacts.remove(contact);
+        if (contacts.contains(contact)) {
+                contacts.remove(contact);
             flag = true;
         }
         return flag;

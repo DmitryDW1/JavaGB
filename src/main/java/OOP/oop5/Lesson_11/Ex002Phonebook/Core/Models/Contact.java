@@ -8,7 +8,7 @@ public class Contact  implements Comparable<Contact> {
     public String lastName;
     public String company;
     public String phone;
-    //public Email email;
+    //public Email email; //todo реализовать сущность Email
     //public String email;
     public String description;
 
@@ -17,7 +17,7 @@ public class Contact  implements Comparable<Contact> {
         this.lastName = lastName;
         this.description = description;
     }
-    
+
     // добавить возможность создания объектов с бОльшим
     // количеством параметров
 
@@ -31,8 +31,6 @@ public class Contact  implements Comparable<Contact> {
     public boolean equals(Object obj) {
         Contact t = (Contact)obj;
         return this.firstName == t.firstName
-                && this.lastName == t.lastName
-        ;
+                && this.lastName == t.lastName;
     }
-
 }

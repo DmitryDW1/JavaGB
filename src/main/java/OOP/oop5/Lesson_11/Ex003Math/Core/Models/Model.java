@@ -1,8 +1,8 @@
 package OOP.oop5.Lesson_11.Ex003Math.Core.Models;
 
-import Ex003Math.Mathematics.CalculateArea.Calculate;
-import Ex003Math.Mathematics.Shapes.Canvas;
-import Ex003Math.Mathematics.Shapes.Shape;
+import OOP.oop5.Lesson_11.Ex003Math.Mathematics.CalculateArea.Calculate;
+import OOP.oop5.Lesson_11.Ex003Math.Mathematics.Shapes.Canvas;
+import OOP.oop5.Lesson_11.Ex003Math.Mathematics.Shapes.Shape;
 
 public class Model {
     Shape panel;
