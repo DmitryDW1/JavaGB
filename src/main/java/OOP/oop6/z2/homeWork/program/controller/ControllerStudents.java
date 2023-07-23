@@ -12,9 +12,9 @@ public class ControllerStudents extends Student implements DataServiceStudents {
 //        return students;
 //    }
     @Override
-    public void show (List<Student> students) {
-        for (Student student : students) {
-            System.out.println(student.toString());
+    public void show(List<?> users) {
+        for (Object o : users) {
+            System.out.println(o.toString());
         }
     }
 }
