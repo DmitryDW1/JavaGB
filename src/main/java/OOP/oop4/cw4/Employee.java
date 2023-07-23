@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Open Closed Principle (Принцип открытости/закрытости)
+ * открыт для расширений, закрыт для изменений
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
