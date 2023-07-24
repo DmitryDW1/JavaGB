@@ -3,6 +3,10 @@ package OOP.oop6.z2.homeWork.cw3refactor.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Single Responsibility Principle («Принцип единой ответственности», SRP). Класс отвечает за вычисления.
+ * Open-Closed Principle («Принцип открытости-закрытости», OCP). Класс закрыт для изменений, но может быть расширен.
+ */
 public class Calculator {
     public double sum(List<? extends Number> numbers){
         double sum = 0;
