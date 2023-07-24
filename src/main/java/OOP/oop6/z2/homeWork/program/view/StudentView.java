@@ -22,14 +22,14 @@ public class StudentView {
                         Student student = new Student();
                         List<Student> students = new ArrayList<>();
                         ControllerStudents controllerStudents = new ControllerStudents();
-                        student.create(students);
+                        controllerStudents.create(students);
                         controllerStudents.show(students);
                         break;
                     case "2":
                         Teacher teacher = new Teacher();
                         List<Teacher> teachers = new ArrayList<>();
                         ControllerTeachers controllerTeachers = new ControllerTeachers();
-                        teacher.create(teachers);
+                        controllerTeachers.create(teachers);
                         controllerTeachers.show(teachers);
                 }
             }
