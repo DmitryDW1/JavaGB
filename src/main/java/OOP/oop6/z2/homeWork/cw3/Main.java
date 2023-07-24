@@ -1,10 +1,5 @@
 package OOP.oop6.z2.homeWork.cw3;
 
-import OOP.oop6.z2.homeWork.cw3.controller.Controller;
-import OOP.oop6.z2.homeWork.cw3.controller.ControllerNewVersion;
-import OOP.oop6.z2.homeWork.cw3.model.Calculator;
-import OOP.oop6.z2.homeWork.cw3.view.View;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +8,6 @@ public class Main {
     //возвращающий сумму элементов коллекции (метод sum)
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        Controller controller = new Controller(calculator);
-        ControllerNewVersion controllerNewVersion = new ControllerNewVersion(calculator);
         List<Integer> integerList = new ArrayList<>();
         List<Double> doubleList = new ArrayList<>();
         List<Number> numberList = new ArrayList<>();
@@ -27,7 +20,19 @@ public class Main {
             floatList.add ((float) (i + 0.4));
             stringList.add(i - 1, "text");
         }
-        View view = new View(controller, controllerNewVersion, doubleList, integerList, numberList, floatList, stringList);
-        view.init();
+        System.out.println("doubleList = " + doubleList);
+        System.out.println("integerList = " + integerList);
+        System.out.println("numberList = " + numberList);
+        System.out.println("floatList = " + floatList);
+        System.out.println("stringList = " + stringList);
+        System.out.println("calculator.sum(numberList) = " + calculator.sum(numberList));
+        System.out.println("calculator.sum(integerList) = " + calculator.sum(integerList));
+        System.out.println("calculator.sum(doubleList) = " + calculator.sum(doubleList));
+        System.out.println("calculator.multiplication(numberList) = " + calculator.multiplication(numberList));
+        System.out.println("calculator.division(numberList) = " + calculator.division(numberList));
+        System.out.println("calculator.translation(integerList) = " + calculator.translation(integerList));
+        System.out.println("calculator.translation(doubleList) = " + calculator.translation(doubleList));
+        System.out.println("calculator.translation(floatList) = " + calculator.translation(floatList));
+        System.out.println("calculator.translation(stringList) = " + calculator.translation(stringList));
     }
 }

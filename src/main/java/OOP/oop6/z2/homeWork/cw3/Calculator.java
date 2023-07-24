@@ -1,4 +1,4 @@
-package OOP.oop6.z2.homeWork.cw3.model;
+package OOP.oop6.z2.homeWork.cw3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ public class Calculator {
         double sum = 0;
         for (Number number : numbers) {
             sum += number.doubleValue();
+
         }
         return sum;
     }
@@ -42,6 +43,7 @@ public class Calculator {
             }
         }
         return binaryString;
+
     }
     public StringBuilder stringToBinary(String number) {
         StringBuilder answer = new StringBuilder();
@@ -50,5 +52,8 @@ public class Calculator {
             answer.append(Integer.toBinaryString(charNumber)).append(' ');
         }
         return answer;
+    }
+    private String toString(Object number) {
+        return (String) number;
     }
 }

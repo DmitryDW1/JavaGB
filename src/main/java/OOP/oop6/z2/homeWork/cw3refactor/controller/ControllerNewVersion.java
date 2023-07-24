@@ -1,6 +1,6 @@
-package OOP.oop6.z2.homeWork.cw3.controller;
+package OOP.oop6.z2.homeWork.cw3refactor.controller;
 
-import OOP.oop6.z2.homeWork.cw3.model.Calculator;
+import OOP.oop6.z2.homeWork.cw3refactor.model.Calculator;
 
 import java.util.List;
 

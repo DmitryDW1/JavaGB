@@ -1,7 +1,7 @@
-package OOP.oop6.z2.homeWork.cw3.view;
+package OOP.oop6.z2.homeWork.cw3refactor.view;
 
-import OOP.oop6.z2.homeWork.cw3.controller.Controller;
-import OOP.oop6.z2.homeWork.cw3.controller.ControllerNewVersion;
+import OOP.oop6.z2.homeWork.cw3refactor.controller.Controller;
+import OOP.oop6.z2.homeWork.cw3refactor.controller.ControllerNewVersion;
 
 import java.util.List;
 
