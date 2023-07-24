@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Teacher extends User {
-    int teacherId;
+    protected int teacherId;
 
     public Teacher(String name, LocalDate birthDate, int teacherId) {
         super(name, birthDate);
