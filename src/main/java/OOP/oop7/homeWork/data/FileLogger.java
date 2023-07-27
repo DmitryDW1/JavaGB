@@ -1,5 +1,7 @@
-package OOP.oop7.homeWork;
+package OOP.oop7.homeWork.data;
 
+
+import OOP.oop7.homeWork.service.Logger;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -16,7 +18,7 @@ public class FileLogger implements Logger {
     public void setTextLog(String message) {
         try
             (BufferedWriter writer = new BufferedWriter(new FileWriter(logString, true))) {
-            writer.write("FileLogger " + message);
+            writer.write( message + '\n');
         } catch (IOException ex) {
              ex.printStackTrace();
         }

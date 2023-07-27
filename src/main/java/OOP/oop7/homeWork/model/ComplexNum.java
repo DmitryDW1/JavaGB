@@ -1,4 +1,4 @@
-package OOP.oop7.homeWork;
+package OOP.oop7.homeWork.model;
 
 public class ComplexNum {
     private double matNumber;
@@ -17,19 +17,14 @@ public class ComplexNum {
     public double getImagNumber() {
         return imagNumber;
     }
-
-    public void setMatNumber(double matNumber) {
-        this.matNumber = matNumber;
-    }
-
-    public void setImagNumber(double imagNumber) {
-        this.imagNumber = imagNumber;
-    }
     @Override
     public String toString() {
-        return "ComplexNum{" +
-                "matNumber=" + matNumber +
-                ", imagNumber=" + imagNumber +
-                '}';
+        String res = "";
+        if(imagNumber > 0){
+            res = matNumber + "+" + imagNumber + "i";
+        }else {
+            res = matNumber + "" +  imagNumber + "i";
+        }
+        return res;
     }
 }

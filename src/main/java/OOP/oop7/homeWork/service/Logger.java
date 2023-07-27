@@ -1,6 +1,5 @@
-package OOP.oop7.homeWork;
+package OOP.oop7.homeWork.service;
 
 public interface Logger {
-    String textLog = null;
     void setTextLog(String message);
 }
