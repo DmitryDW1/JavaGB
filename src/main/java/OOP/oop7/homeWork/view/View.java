@@ -6,11 +6,11 @@ import OOP.oop7.homeWork.service.Logger;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 public class View {
     public void run(ICalc iCalc, Logger logger, FileReader fileReader) throws IOException {
-        logger.setTextLog(String.valueOf(LocalDate.now()));
+        logger.setTextLog(String.valueOf(LocalDateTime.now()));
         System.out.println("При вводе значений учитывается знак (+ или -). По-умолчанию знак '+'.");
         calculations(iCalc, logger, fileReader);
     }
