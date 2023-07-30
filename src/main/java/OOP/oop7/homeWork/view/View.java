@@ -23,19 +23,11 @@ public class View {
         System.out.println("Выберите действие: +  -  *  /");
         String key = scanner.next();
         System.out.print("\033[H\033[J");
-        switch (key){
-            case "+":
-                System.out.println(iCalc.addition(number1, number2, logger));
-                break;
-            case "-":
-                System.out.println(iCalc.subtraction(number1, number2, logger));
-                break;
-            case "*":
-                System.out.println(iCalc.multiplication(number1, number2, logger));
-                break;
-            case "/":
-                System.out.println(iCalc.division(number1, number2, logger));
-                break;
+        switch (key) {
+            case "+" -> System.out.println(iCalc.addition(number1, number2, logger));
+            case "-" -> System.out.println(iCalc.subtraction(number1, number2, logger));
+            case "*" -> System.out.println(iCalc.multiplication(number1, number2, logger));
+            case "/" -> System.out.println(iCalc.division(number1, number2, logger));
         }
         repeat(scanner, iCalc ,logger, fileReader);
     }
