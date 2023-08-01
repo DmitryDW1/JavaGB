@@ -1,4 +1,4 @@
-package exceptionsSeminars.seminar2;
+package exceptionsSeminars.seminar2.homeWork;
 
 import java.io.BufferedReader;
 import java.io.IOException;
