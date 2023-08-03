@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class FileLogger implements Logger {
 
-    private String logString;
+    private final String logString;
     public FileLogger (String logString){
         this.logString = logString;
     }

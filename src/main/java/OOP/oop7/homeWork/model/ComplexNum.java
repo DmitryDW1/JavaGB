@@ -1,8 +1,11 @@
 package OOP.oop7.homeWork.model;
 
+import lombok.Getter;
+
+@Getter
 public class ComplexNum {
-    private double matNumber;
-    private double imagNumber;
+    private final double matNumber;
+    private final double imagNumber;
 
 
     public ComplexNum(double matNumber, double imagNumber){
@@ -10,13 +13,6 @@ public class ComplexNum {
         this.imagNumber = imagNumber;
     }
 
-    public double getMatNumber() {
-        return matNumber;
-    }
-
-    public double getImagNumber() {
-        return imagNumber;
-    }
     @Override
     public String toString() {
         String res = "";
