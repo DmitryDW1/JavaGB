@@ -92,7 +92,7 @@ public class UserInputConsoleReader implements UserInputReader, UserInputDataPar
       return Gender.FEMALE;
     } else {
       System.out.println(Colors.RED + genderString + Colors.RESET);
-      throw new ParseException("Неверный указан пол пользователя" + "\n" +
+      throw new ParseException("Неверно указан пол пользователя" + "\n" +
               Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
