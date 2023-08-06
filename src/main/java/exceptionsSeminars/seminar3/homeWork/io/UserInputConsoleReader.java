@@ -1,9 +1,6 @@
 package exceptionsSeminars.seminar3.homeWork.io;
 
-import exceptionsSeminars.seminar3.homeWork.data.Gender;
-import exceptionsSeminars.seminar3.homeWork.data.ParseException;
-import exceptionsSeminars.seminar3.homeWork.data.UserData;
-import exceptionsSeminars.seminar3.homeWork.data.UserDataException;
+import exceptionsSeminars.seminar3.homeWork.data.*;
 import exceptionsSeminars.seminar3.homeWork.interfaces.IuserDataException;
 import exceptionsSeminars.seminar3.homeWork.interfaces.UserInputDataParse;
 import exceptionsSeminars.seminar3.homeWork.interfaces.UserInputReader;
@@ -14,12 +11,8 @@ import java.util.Scanner;
 
 
 public class UserInputConsoleReader implements UserInputReader, UserInputDataParse, IuserDataException {
-  public static final String ANSI_RESET = "\u001B[0m";
-  public static final String ANSI_YELLOW = "\u001B[33m";
-  public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-
   @Override
-  public UserData readUserData() throws UserDataException {
+  public UserData readUserData() {
     while (true) {
       try {
         Scanner scanner = new Scanner(System.in);
@@ -28,8 +21,8 @@ public class UserInputConsoleReader implements UserInputReader, UserInputDataPar
         dataLength(data);
         String lName = parseLastName(data[0]);
         String fName = parseFirstName(data[1]);
-        LocalDate dateOfBirth = parseDateOfBirth(data[3]);
         String mName = parseMiddleName(data[2]);
+        LocalDate dateOfBirth = parseDateOfBirth(data[3]);
         long phoneNumber = parsePhoneNumber(data[4]);
         Gender gender = parseGender(data[5]);
         return new UserData(lName, fName, mName, dateOfBirth, phoneNumber, gender);
@@ -44,44 +37,50 @@ public class UserInputConsoleReader implements UserInputReader, UserInputDataPar
     if (lName.toLowerCase().matches("^[a-zа-яё]*$")) {
       return lName;
     } else {
-      System.out.println(ANSI_YELLOW + lName + ANSI_RESET);
-      throw new ParseException("Фамилия должна содержать только символы алфавита " + "\n" +
-              ANSI_RED_BACKGROUND + "  Повторите ввод данных!" + ANSI_RESET);
+      System.out.println(Colors.RED + lName + Colors.RESET);
+      throw new ParseException("Фамилия должна содержать только символы алфавита" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
 
   @Override
-  public String parseFirstName(String lName) throws ParseException {
-    if (lName.toLowerCase().matches("^[a-zа-яё]*$")) {
-      return lName;
+  public String parseFirstName(String fName) throws ParseException {
+    if (fName.toLowerCase().matches("^[a-zа-яё]*$")) {
+      return fName;
     } else {
-      throw new ParseException("Имя должно содержать только символы алфавита");
+      System.out.println(Colors.RED + fName + Colors.RESET);
+      throw new ParseException("Имя должно содержать только символы алфавита" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
 
-  public String parseMiddleName(String lName) throws ParseException {
-    if (lName.toLowerCase().matches("^[a-zа-яё]*$")) {
-      return lName;
+  public String parseMiddleName(String mName) throws ParseException {
+    if (mName.toLowerCase().matches("^[a-zа-яё]*$")) {
+      return mName;
     } else {
-      throw new ParseException("Отчество должно содержать только символы алфавита");
+      System.out.println(Colors.RED + mName + Colors.RESET);
+      throw new ParseException("Отчество должно содержать только символы алфавита" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
-
   @Override
   public LocalDate parseDateOfBirth(String dateOfBirthString) throws ParseException {
     try {
       return LocalDate.parse(dateOfBirthString, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     } catch (Exception e) {
-      throw new ParseException("Неверный формат даты рождения");
+      System.out.println(Colors.RED + dateOfBirthString + Colors.RESET);
+      throw new ParseException("Неверный формат даты рождения" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
-
   @Override
   public long parsePhoneNumber(String phoneNumberString) throws ParseException {
     try {
       return Long.parseLong(phoneNumberString);
     } catch (NumberFormatException e) {
-      throw new ParseException("Неверный формат номера телефона");
+      System.out.println(Colors.RED + phoneNumberString + Colors.RESET);
+      throw new ParseException("Номер телефона может содержать только цифры" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
 
@@ -92,7 +91,9 @@ public class UserInputConsoleReader implements UserInputReader, UserInputDataPar
     } else if (genderString.equalsIgnoreCase("f")) {
       return Gender.FEMALE;
     } else {
-      throw new ParseException("Неверный формат пола");
+      System.out.println(Colors.RED + genderString + Colors.RESET);
+      throw new ParseException("Неверный указан пол пользователя" + "\n" +
+              Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
   @Override
@@ -100,7 +101,8 @@ public class UserInputConsoleReader implements UserInputReader, UserInputDataPar
    if (data.length == 6){
      return data;
     }else {
-      throw new UserDataException("Введено неверное количество данных");
+     throw new UserDataException("Нехватает информации о пользователе" + "\n" +
+             Colors.RED_BACKGROUND + "Повторите ввод данных!" + Colors.RESET);
     }
   }
 }

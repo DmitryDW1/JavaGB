@@ -53,7 +53,7 @@ public class View {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                repeat(scanner, iCalc ,logger, fileReader);
+            repeat(scanner, iCalc ,logger, fileReader);
         }
     }
     private ComplexNum number(Logger logger) {

@@ -1,6 +1,6 @@
 package exceptionsSeminars.seminar3.homeWork.data;
 
-enum Colors {
+public enum Colors {
     //Color end string, color reset
     RESET("\033[0m"),
 
