@@ -10,12 +10,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class View{
-    public void run(Scanner scanner, UserInputReader inputReader, UserDataFileWriter fileWriter)
-            throws UserDataException, IOException {
-        repeat(scanner, inputReader, fileWriter);
-    }
 
-    private void repeat(Scanner scanner, UserInputReader inputReader, UserDataFileWriter fileWriter) {
+
+    public void run(Scanner scanner, UserInputReader inputReader, UserDataFileWriter fileWriter) {
         System.out.println("Введите данные в через пробел: Фамилия Имя Отчество Дата рождения " +
                 "(dd.mm.yyyy) Номер телефона (только цифры) Пол (f или m)");
         try {
